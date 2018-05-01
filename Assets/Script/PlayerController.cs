@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour {
 
@@ -38,7 +39,11 @@ public class PlayerController : MonoBehaviour {
 		
 	}
 
-
+	void OnCollisionEnter(Collision other){
+		if (other.gameObject.tag == "Lazer") {
+			SceneManager.LoadScene ("Gameover");
+		}
+	}
 
 
 
