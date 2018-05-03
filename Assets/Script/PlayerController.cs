@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	void OnCollisionEnter(Collision other){
-		if (other.gameObject.tag == "Lazer") {
+		if (other.gameObject.tag == "Laser") {
 			SceneManager.LoadScene ("Gameover");
 		}
 	}
