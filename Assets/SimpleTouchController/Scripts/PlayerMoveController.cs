@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityStandardAssets.CrossPlatformInput;
 
 [RequireComponent(typeof(Rigidbody))]
 
@@ -39,9 +40,21 @@ public class PlayerMoveController : MonoBehaviour {
 	void Update()
 	{
 		// move
-		_rigidbody.MovePosition(transform.position + (transform.forward * leftController.GetTouchPosition.y * Time.deltaTime * speedMovements) +
+		_rigidbody.MovePosition(transform.position - (transform.forward * leftController.GetTouchPosition.y * Time.deltaTime * speedMovements) -
 			(transform.right * leftController.GetTouchPosition.x * Time.deltaTime * speedMovements) );
 
+		// スティックの倒れた向きを向く
+		//var v2 = CrossPlatformInputManager.GetAxis ("Vertical");
+		//var h2 = CrossPlatformInputManager.GetAxis ("Horizontal");
+		//Vector3 direction = new Vector3(h2,0,v2);
+		//transform.localRotation = Quaternion.LookRotation (direction);
+		//↑ただ動きが鈍くなった
+
+		// 斜めの長さ
+		float y = leftController.GetTouchPosition.y;
+		float x = leftController.GetTouchPosition.x;
+		float syahen = Mathf.Sqrt (x * x + y * y);
+		Debug.Log (syahen);
 		//if(continuousRightController)
 		//{
 		//	UpdateAim(rightController.GetTouchPosition);
