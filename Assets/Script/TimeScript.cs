@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class TimeScript : MonoBehaviour {
-	public float time = 60;
+	public float time = 180;
 	public GameObject Lazer;
 	// Use this for initialization
 	void Start () {

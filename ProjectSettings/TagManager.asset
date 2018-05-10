@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Laser
   - Switch1
+  - Jailer
+  - Switch2
+  - GetScop
   layers:
   - Default
   - TransparentFX

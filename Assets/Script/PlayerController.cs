@@ -10,6 +10,13 @@ public class PlayerController : MonoBehaviour {
 	public Vector3 s_position;
 	public GameObject Switch1;
 	public GameObject LaserGreen;
+	public GameObject Switch2;
+	public GameObject LaserPurple;
+	public GameObject Scop;
+	public GameObject ScopIcon;
+	public GameObject ActiveMessagePanel2;
+	public GameObject ActiveMessagePanel3;
+	public GameObject ActiveMessagePanel4;
 
 	// Use this for initialization
 	void Start () {
@@ -45,6 +52,21 @@ public class PlayerController : MonoBehaviour {
 		if (other.gameObject.tag == "Switch1") {
 			Switch1.gameObject.SetActive(false);
 			LaserGreen.gameObject.SetActive(false);
+		}
+		if (other.gameObject.tag == "Switch2") {
+			Switch2.gameObject.SetActive(false);
+			LaserPurple.gameObject.SetActive(false);
+		}
+		if (other.gameObject.tag == "Jailer") {
+			SceneManager.LoadScene ("Gameover");
+			this.transform.position = new Vector3 (s_position.x, s_position.y, s_position.z);
+		}
+		if (other.gameObject.tag == "GetScop") {
+			Scop.gameObject.SetActive(false);
+			ScopIcon.SetActive(true);
+			ActiveMessagePanel2.SetActive(false);
+			ActiveMessagePanel3.SetActive(true);
+			ActiveMessagePanel4.SetActive(true);
 		}
 	}
 
