@@ -8,15 +8,21 @@ public class PlayerController : MonoBehaviour {
 
 	float speed = 5.0f;
 	public Vector3 s_position;
+	public GameObject JailDoor;
 	public GameObject Switch1;
 	public GameObject LaserGreen;
 	public GameObject Switch2;
 	public GameObject LaserPurple;
 	public GameObject Scop;
 	public GameObject ScopIcon;
+	public GameObject Card;
+	public GameObject CardIcon;
+	public GameObject Door;
 	public GameObject ActiveMessagePanel2;
 	public GameObject ActiveMessagePanel3;
 	public GameObject ActiveMessagePanel4;
+	public GameObject ActiveMessagePanel5;
+	public GameObject ActiveMessagePanel6;
 
 	// Use this for initialization
 	void Start () {
@@ -45,6 +51,9 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	void OnCollisionEnter(Collision other){
+		if (other.gameObject.tag == "JailDoor") {
+			JailDoor.gameObject.SetActive(false);
+		}
 		if (other.gameObject.tag == "Laser") {
 			SceneManager.LoadScene ("Gameover");
 			this.transform.position = new Vector3 (s_position.x, s_position.y, s_position.z);
@@ -67,6 +76,16 @@ public class PlayerController : MonoBehaviour {
 			ActiveMessagePanel2.SetActive(false);
 			ActiveMessagePanel3.SetActive(true);
 			ActiveMessagePanel4.SetActive(true);
+		}
+		if (other.gameObject.tag == "GetCard") {
+			Card.gameObject.SetActive(false);
+			CardIcon.SetActive(true);
+			ActiveMessagePanel5.SetActive(false);
+			ActiveMessagePanel6.SetActive(true);
+		}
+		if (other.gameObject.tag == "Door") {
+			//キューがいれば
+			Door.gameObject.SetActive(false);
 		}
 	}
 

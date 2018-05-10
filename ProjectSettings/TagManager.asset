@@ -9,6 +9,9 @@ TagManager:
   - Jailer
   - Switch2
   - GetScop
+  - GetCard
+  - Door
+  - JailDoor
   layers:
   - Default
   - TransparentFX
