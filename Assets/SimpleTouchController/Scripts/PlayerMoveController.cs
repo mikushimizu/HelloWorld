@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UnityStandardAssets.CrossPlatformInput;
 
 [RequireComponent(typeof(Rigidbody))]
 
@@ -44,11 +43,10 @@ public class PlayerMoveController : MonoBehaviour {
 			(transform.right * leftController.GetTouchPosition.x * Time.deltaTime * speedMovements) );
 
 		// スティックの倒れた向きを向く
-		//var v2 = CrossPlatformInputManager.GetAxis ("Vertical");
-		//var h2 = CrossPlatformInputManager.GetAxis ("Horizontal");
-		//Vector3 direction = new Vector3(h2,0,v2);
-		//transform.localRotation = Quaternion.LookRotation (direction);
-		//↑ただ動きが鈍くなった
+		var v2 = leftController.GetTouchPosition.y;
+		var h2 = leftController.GetTouchPosition.x;
+		Vector3 direction = new Vector3(h2,0,v2);
+		transform.localRotation = Quaternion.LookRotation (direction);
 
 		// 斜めの長さ
 		float y = leftController.GetTouchPosition.y;
