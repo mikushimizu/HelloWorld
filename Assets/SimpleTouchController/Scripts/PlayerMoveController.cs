@@ -49,10 +49,10 @@ public class PlayerMoveController : MonoBehaviour {
 		transform.localRotation = Quaternion.LookRotation (direction);
 
 		// 斜めの長さ
-		float y = leftController.GetTouchPosition.y;
-		float x = leftController.GetTouchPosition.x;
-		float syahen = Mathf.Sqrt (x * x + y * y);
-		Debug.Log (syahen);
+		//float y = leftController.GetTouchPosition.y;
+		//float x = leftController.GetTouchPosition.x;
+		//float syahen = Mathf.Sqrt (x * x + y * y);
+		//Debug.Log (syahen);
 		//if(continuousRightController)
 		//{
 		//	UpdateAim(rightController.GetTouchPosition);
