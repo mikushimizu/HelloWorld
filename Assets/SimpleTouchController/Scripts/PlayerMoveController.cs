@@ -9,7 +9,7 @@ public class PlayerMoveController : MonoBehaviour {
 	public SimpleTouchController leftController;
 	public SimpleTouchController rightController;
 	public Transform headTrans;
-	public float speedMovements = 10f;
+	public float speed = 5f;
 	public float speedContinuousLook = 100f;
 	public float speedProgressiveLook = 3000f;
 
@@ -39,9 +39,7 @@ public class PlayerMoveController : MonoBehaviour {
 	void Update()
 	{
 		// move
-		_rigidbody.MovePosition(transform.position - (transform.forward * leftController.GetTouchPosition.y * Time.deltaTime * speedMovements) -
-			(transform.right * leftController.GetTouchPosition.x * Time.deltaTime * speedMovements) );
-
+		_rigidbody.velocity = new Vector3(leftController.GetTouchPosition.x, 0, leftController.GetTouchPosition.y) * speed;
 		// スティックの倒れた向きを向く
 		var v2 = leftController.GetTouchPosition.y;
 		var h2 = leftController.GetTouchPosition.x;
