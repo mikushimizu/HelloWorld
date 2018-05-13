@@ -12,7 +12,7 @@ public class PlayerMoveController : MonoBehaviour {
 	public float speed = 5f;
 	public float speedContinuousLook = 100f;
 	public float speedProgressiveLook = 3000f;
-
+	public GameObject Message;
 	// PRIVATE
 	private Rigidbody _rigidbody;
 	[SerializeField] bool continuousRightController = true;
@@ -39,7 +39,14 @@ public class PlayerMoveController : MonoBehaviour {
 	void Update()
 	{
 		// move
-		_rigidbody.velocity = new Vector3(leftController.GetTouchPosition.x, 0, leftController.GetTouchPosition.y) * speed;
+		if (Message.activeSelf) {
+			speed = 0;
+		}else{
+			speed = 10f;
+		}
+			_rigidbody.velocity = new Vector3 (leftController.GetTouchPosition.x, 0, leftController.GetTouchPosition.y) * speed;
+		
+
 		// スティックの倒れた向きを向く
 		var v2 = leftController.GetTouchPosition.y;
 		var h2 = leftController.GetTouchPosition.x;

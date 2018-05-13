@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class TimeScript : MonoBehaviour {
 	public float time = 180;
@@ -18,6 +19,7 @@ public class TimeScript : MonoBehaviour {
 		//マイナスは表示しない
 		if (time < 0) {
 			time = 0;
+			SceneManager.LoadScene ("Gameover");
 		}
 		GetComponent<Text> ().text = ((int)time).ToString ();
 

@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour {
 	public GameObject LaserGreen;
 	public GameObject Switch2;
 	public GameObject LaserPurple;
+	public GameObject Switch3;
+	public GameObject LaserBlue;
 	public GameObject Scop;
 	public GameObject ScopIcon;
 	public GameObject Card;
@@ -65,6 +67,10 @@ public class PlayerController : MonoBehaviour {
 		if (other.gameObject.tag == "Switch2") {
 			Switch2.gameObject.SetActive(false);
 			LaserPurple.gameObject.SetActive(false);
+		}
+		if (other.gameObject.tag == "Switch3") {
+			Switch3.gameObject.SetActive(false);
+			LaserBlue.gameObject.SetActive(false);
 		}
 		if (other.gameObject.tag == "Jailer") {
 			SceneManager.LoadScene ("Gameover");

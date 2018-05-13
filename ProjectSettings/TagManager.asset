@@ -12,6 +12,7 @@ TagManager:
   - GetCard
   - Door
   - JailDoor
+  - Switch3
   layers:
   - Default
   - TransparentFX

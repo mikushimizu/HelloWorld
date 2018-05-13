@@ -14,8 +14,7 @@ public class ActiveMessagePanel3 : MonoBehaviour {
 	public GameObject ActiveMessagePanel5;
 
 	//表示させるメッセージ
-	private string message = "サンキュー、スタック！\n"
-		+"さぁ、一緒にこんなとこ出ちまおうぜ！\n\n"
+	private string message = "≪キュー≫\n「サンキュー、スタック！\nさぁ、一緒にこんなとこ出ちまおうぜ！」\n"
 		+" キューが仲間になった "
 		;
 

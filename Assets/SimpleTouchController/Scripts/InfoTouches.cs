@@ -10,6 +10,7 @@ public class InfoTouches : MonoBehaviour {
 	public SimpleTouchController leftController;
 	public SimpleTouchController rightController;
 
+	public GameObject Message;
 	// PRIVATE
 
 

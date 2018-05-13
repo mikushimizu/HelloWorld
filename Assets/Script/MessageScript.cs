@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class MessageScript : MonoBehaviour {
+	public GameObject JoyStick;
 	//　メッセージUI
 	private Text messageText;
 	//　表示するメッセージ
@@ -43,6 +44,7 @@ public class MessageScript : MonoBehaviour {
 		SetMessage("どうやら看守が鍵をかけ忘れたようだ。\n\n\n"
 			+ "見回りが気づく前に、この監獄から脱出しよう…！\n"
 		);
+
 	}
 	
 	// Update is called once per frame
@@ -123,6 +125,7 @@ public class MessageScript : MonoBehaviour {
 					isEndMessage = true;
 					transform.GetChild (0).gameObject.SetActive (false);
 					//　それ以外はテキスト処理関連を初期化して次の文字から表示させる
+					JoyStick.SetActive (true);
 				}
 			}
 		}
@@ -133,6 +136,7 @@ public class MessageScript : MonoBehaviour {
 	//　他のスクリプトから新しいメッセージを設定
 	public void SetMessagePanel(string message) {
 		SetMessage (message);
+		//JoyStick.SetActive (false);
 		transform.GetChild (0).gameObject.SetActive (true);
 		isEndMessage = false;
 	}

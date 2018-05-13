@@ -8,8 +8,8 @@ public class ActiveMessagePanel1 : MonoBehaviour {
 	private MessageScript messageScript;
 
 	//表示させるメッセージ
-	private string message = "おい、スタック！\n\n\n"
-		+"こっちだこっち！　檻ん中！";
+	private string message = "≪？？？≫\n「おい、スタック！」\n\n"
+		+"≪？？？≫\n「こっちだこっち！　檻ん中！」";
 
 	void OnCollisionEnter(Collision other){
 		if (other.gameObject.tag == "Player") {

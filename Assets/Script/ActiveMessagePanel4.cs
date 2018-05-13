@@ -9,7 +9,16 @@ public class ActiveMessagePanel4 : MonoBehaviour {
 
 
 	//表示させるメッセージ
-	private string message = "ED3:「殺人犯」"
+	private string message = "≪看守≫\n「お前、囚人だな？\nどうしてこんなところにいる。」\n"
+		+"≪看守≫\n「今すぐそのスコップを床に置いて、\n両手を上げろ！」\n"
+		+"…\n\n\n"
+		+"≪看守≫\n「なにやってんだ早くしろ！」\n\n"
+		+"…\n\n\n"
+		+"≪看守≫\n「ふざけるな、逃げられるとでも思っているのか？\nお前は一生牢屋から出られない。」\n"
+		+"≪看守≫\n「罪人なんかに自由になる権利はないんだよ。」\n\n"
+		+"≪看守≫\n「言うことをきかないと…\nわかってんだろうなぁ！」\n"
+		+"≪看守≫\n「ま、待て、お、お、落ち着け！\nスコップを降ろせ！やめっ…」\n"
+		+"ED3:「殺人犯」\n\n\n"
 		;
 
 	void OnCollisionEnter(Collision other){
