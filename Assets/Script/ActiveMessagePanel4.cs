@@ -8,6 +8,8 @@ public class ActiveMessagePanel4 : MonoBehaviour {
 	[SerializeField]
 	private MessageScript messageScript;
 	public GameObject time;
+	public GameObject LastJailer;
+	public GameObject Tosenbo;
 
 	//表示させるメッセージ
 	private string message = "≪看守≫\n「お前、囚人だな？\nどうしてこんなところにいる。」\n"
@@ -19,13 +21,15 @@ public class ActiveMessagePanel4 : MonoBehaviour {
 		+"≪看守≫\n「罪人なんかに自由になる権利はないんだよ。」\n\n"
 		+"≪看守≫\n「言うことをきかないと…\nわかってんだろうなぁ！」\n"
 		+"≪看守≫\n「ま、待て、お、お、落ち着け！\nスコップを降ろせ！やめっ…」\n"
-		+"ED3:「殺人犯」\n\n\n"
 		;
 
 	void OnCollisionEnter(Collision other){
 		if (other.gameObject.tag == "Player") {
 			messageScript.SetMessagePanel (message);
+			Destroy(this.gameObject);
 			Destroy(time.gameObject);
+			LastJailer.SetActive (true);
+			Tosenbo.SetActive (true);
 		}
 	}
 }

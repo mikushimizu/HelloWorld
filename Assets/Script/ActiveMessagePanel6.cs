@@ -1,4 +1,4 @@
-﻿	using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -17,8 +17,7 @@ public class ActiveMessagePanel6 : MonoBehaviour {
 		+"≪キュー≫\n「一般人を囚人と看守のグループに分けて、\nどんな行動をとるか観察するっていう…。」\n"
 		+"≪キュー≫\n「まさかお前、本気で、\n自分が囚人だと思い込んでたのか…？」\n"
 		+"≪キュー≫\n「そんなわけないだろ！」\n\n"
-
-		+"ED1:「南の島」"
+		+"≪キュー≫\n「ま、とにかく、これで解放されたんだ。\nバイト代もがっぽり貰えたことだし、\n外でパァーっとやろうぜ！」"
 		;
 
 	void OnCollisionEnter(Collision other){

@@ -20,7 +20,6 @@ public class PlayerMoveController : MonoBehaviour {
 	void Awake()
 	{
 		_rigidbody = GetComponent<Rigidbody>();
-		//rightController.TouchEvent += RightController_TouchEvent;
 	}
 
 	public bool ContinuousRightController
@@ -28,13 +27,6 @@ public class PlayerMoveController : MonoBehaviour {
 		set{continuousRightController = value;}
 	}
 
-	//void RightController_TouchEvent (Vector2 value)
-	//{
-	//	if(!continuousRightController)
-	//	{
-	//		UpdateAim(value);
-	//	}
-	//}
 
 	void Update()
 	{
@@ -81,10 +73,4 @@ public class PlayerMoveController : MonoBehaviour {
 			_rigidbody.MoveRotation(rot);
 		}
 	}
-
-	//void OnDestroy()
-	//{
-	//	rightController.TouchEvent -= RightController_TouchEvent;
-	//}
-
 }

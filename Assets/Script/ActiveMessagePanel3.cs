@@ -12,6 +12,8 @@ public class ActiveMessagePanel3 : MonoBehaviour {
 	public GameObject QueueIcon;
 	public GameObject ActiveMessagePanel4;
 	public GameObject ActiveMessagePanel5;
+	public GameObject ActiveMessagePanel7;
+	public GameObject ActiveMessagePanel9;
 
 	//表示させるメッセージ
 	private string message = "≪キュー≫\n「サンキュー、スタック！\nさぁ、一緒にこんなとこ出ちまおうぜ！」\n"
@@ -28,6 +30,8 @@ public class ActiveMessagePanel3 : MonoBehaviour {
 			QueueIcon.SetActive(true);
 			ActiveMessagePanel4.SetActive(false);
 			ActiveMessagePanel5.SetActive(true);
+			ActiveMessagePanel7.SetActive(true);
+			ActiveMessagePanel9.SetActive(true);
 		}
 	}
 

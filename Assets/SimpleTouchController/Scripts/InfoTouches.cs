@@ -19,9 +19,5 @@ public class InfoTouches : MonoBehaviour {
 		leftText.text = "Left Touch:\n" +
 			"x: " + leftController.GetTouchPosition.x + "\n" +
 			"y: " + leftController.GetTouchPosition.y;
-
-		//rightText.text = "Right Touch:\n" +
-		//	"x: " + rightController.GetTouchPosition.x + "\n" +
-		//	"y: " + rightController.GetTouchPosition.y;
 	}
 }
