@@ -10,6 +10,7 @@ public class ActiveMessagePanel4 : MonoBehaviour {
 	public GameObject time;
 	public GameObject LastJailer;
 	public GameObject Tosenbo;
+	public GameObject ED3Switch;
 
 	//表示させるメッセージ
 	private string message = "≪看守≫\n「お前、囚人だな？\nどうしてこんなところにいる。」\n"
@@ -30,6 +31,7 @@ public class ActiveMessagePanel4 : MonoBehaviour {
 			Destroy(time.gameObject);
 			LastJailer.SetActive (true);
 			Tosenbo.SetActive (true);
+			ED3Switch.SetActive (true);
 		}
 	}
 }

@@ -13,6 +13,9 @@ TagManager:
   - Door
   - JailDoor
   - Switch3
+  - ED3Switch
+  - ED2Switch
+  - ED1Switch
   layers:
   - Default
   - TransparentFX

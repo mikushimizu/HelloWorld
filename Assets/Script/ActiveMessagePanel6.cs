@@ -7,6 +7,7 @@ public class ActiveMessagePanel6 : MonoBehaviour {
 	[SerializeField]
 	private MessageScript messageScript;
 	public GameObject time;
+	public GameObject ED1Switch;
 
 	//表示させるメッセージ
 	private string message = "≪科学者≫\n「リタイアカードを承りました。\nお疲れ様です。」\n"
@@ -17,13 +18,16 @@ public class ActiveMessagePanel6 : MonoBehaviour {
 		+"≪キュー≫\n「一般人を囚人と看守のグループに分けて、\nどんな行動をとるか観察するっていう…。」\n"
 		+"≪キュー≫\n「まさかお前、本気で、\n自分が囚人だと思い込んでたのか…？」\n"
 		+"≪キュー≫\n「そんなわけないだろ！」\n\n"
-		+"≪キュー≫\n「ま、とにかく、これで解放されたんだ。\nバイト代もがっぽり貰えたことだし、\n外でパァーっとやろうぜ！」"
+		+"≪キュー≫\n「ま、とにかく、これで解放されたんだ。\nバイト代もがっぽり貰えたことだし、」\n"
+		+"≪キュー≫\n「外でパァーっとやろうぜ！」"
 		;
 
 	void OnCollisionEnter(Collision other){
 		if (other.gameObject.tag == "Player" ) {
 			messageScript.SetMessagePanel (message);
 			Destroy(time.gameObject);
+			Destroy(this.gameObject);
+			ED1Switch.SetActive (true);
 		}
 	}
 }

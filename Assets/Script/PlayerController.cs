@@ -25,6 +25,9 @@ public class PlayerController : MonoBehaviour {
 	public GameObject ActiveMessagePanel4;
 	public GameObject ActiveMessagePanel5;
 	public GameObject ActiveMessagePanel6;
+	public GameObject ED3;
+	public GameObject ED2;
+	public GameObject ED1;
 
 	// Use this for initialization
 	void Start () {
@@ -90,6 +93,17 @@ public class PlayerController : MonoBehaviour {
 			ActiveMessagePanel5.SetActive(false);
 			ActiveMessagePanel6.SetActive(true);
 		}
+
+		if (other.gameObject.tag == "ED3Switch") {
+			ED3.SetActive(true);
+		}
+		if (other.gameObject.tag == "ED2Switch") {
+			ED2.SetActive(true);
+		}
+		if (other.gameObject.tag == "ED1Switch") {
+			ED1.SetActive(true);
+		}
+
 	}
 
 

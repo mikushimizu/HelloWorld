@@ -10,6 +10,7 @@ public class ActiveMessagePanel5 : MonoBehaviour {
 	public GameObject LastJailer;
 	public GameObject Queue;
 	public GameObject Tosenbo;
+	public GameObject ED2Switch;
 
 	//表示させるメッセージ
 	private string message = "≪看守≫\n「お前ら、囚人だな？\nどうしてこんなところにいる。」\n"
@@ -26,6 +27,7 @@ public class ActiveMessagePanel5 : MonoBehaviour {
 			LastJailer.SetActive (true);
 			Queue.SetActive (true);
 			Tosenbo.SetActive (true);
+			ED2Switch.SetActive (true);
 		}
 	}
 }
