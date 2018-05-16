@@ -6,6 +6,7 @@ public class ActiveMessagePanel5 : MonoBehaviour {
 	//MessageUIに設定されているMessageスクリプトを設定
 	[SerializeField]
 	private MessageScript messageScript;
+	public GameObject time;
 
 	//表示させるメッセージ
 	private string message = "≪看守≫\n「お前ら、囚人だな？\nどうしてこんなところにいる。」\n"
@@ -22,7 +23,7 @@ public class ActiveMessagePanel5 : MonoBehaviour {
 	void OnCollisionEnter(Collision other){
 		if (other.gameObject.tag == "Player" ) {
 			messageScript.SetMessagePanel (message);
-
+			Destroy(time.gameObject);
 		}
 	}
 }

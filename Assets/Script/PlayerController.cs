@@ -13,14 +13,14 @@ public class PlayerController : MonoBehaviour {
 	public GameObject LaserGreen;
 	public GameObject Switch2;
 	public GameObject LaserPurple;
+	public GameObject LaserPurple2;
 	public GameObject Switch3;
 	public GameObject LaserBlue;
 	public GameObject Scop;
 	public GameObject ScopIcon;
 	public GameObject Card;
 	public GameObject CardIcon;
-	public GameObject Door;
-	public GameObject ActiveMessagePanel2;
+	public GameObject ActiveMessagePanel21;
 	public GameObject ActiveMessagePanel3;
 	public GameObject ActiveMessagePanel4;
 	public GameObject ActiveMessagePanel5;
@@ -67,6 +67,7 @@ public class PlayerController : MonoBehaviour {
 		if (other.gameObject.tag == "Switch2") {
 			Switch2.gameObject.SetActive(false);
 			LaserPurple.gameObject.SetActive(false);
+			LaserPurple2.gameObject.SetActive(false);
 		}
 		if (other.gameObject.tag == "Switch3") {
 			Switch3.gameObject.SetActive(false);
@@ -79,7 +80,7 @@ public class PlayerController : MonoBehaviour {
 		if (other.gameObject.tag == "GetScop") {
 			Scop.gameObject.SetActive(false);
 			ScopIcon.SetActive(true);
-			ActiveMessagePanel2.SetActive(false);
+			ActiveMessagePanel21.SetActive(false);
 			ActiveMessagePanel3.SetActive(true);
 			ActiveMessagePanel4.SetActive(true);
 		}
@@ -88,10 +89,6 @@ public class PlayerController : MonoBehaviour {
 			CardIcon.SetActive(true);
 			ActiveMessagePanel5.SetActive(false);
 			ActiveMessagePanel6.SetActive(true);
-		}
-		if (other.gameObject.tag == "Door") {
-			//キューがいれば
-			Door.gameObject.SetActive(false);
 		}
 	}
 

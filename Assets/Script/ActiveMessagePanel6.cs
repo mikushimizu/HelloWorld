@@ -6,6 +6,7 @@ public class ActiveMessagePanel6 : MonoBehaviour {
 	//MessageUIに設定されているMessageスクリプトを設定
 	[SerializeField]
 	private MessageScript messageScript;
+	public GameObject time;
 
 	//表示させるメッセージ
 	private string message = "≪科学者≫\n「リタイアカードを承りました。\nお疲れ様です。」\n"
@@ -15,7 +16,7 @@ public class ActiveMessagePanel6 : MonoBehaviour {
 		+"≪キュー≫\n「俺たち心理学の実験の被験者だろ？」\n\n"
 		+"≪キュー≫\n「一般人を囚人と看守のグループに分けて、\nどんな行動をとるか観察するっていう…。」\n"
 		+"≪キュー≫\n「まさかお前、本気で、\n自分が囚人だと思い込んでたのか…？」\n"
-		+"≪キュー≫\n「そんなわけないだろ！\n」\n"
+		+"≪キュー≫\n「そんなわけないだろ！」\n\n"
 
 		+"ED1:「南の島」"
 		;
@@ -23,7 +24,7 @@ public class ActiveMessagePanel6 : MonoBehaviour {
 	void OnCollisionEnter(Collision other){
 		if (other.gameObject.tag == "Player" ) {
 			messageScript.SetMessagePanel (message);
-
+			Destroy(time.gameObject);
 		}
 	}
 }

@@ -45,7 +45,7 @@ public class PlayerMoveController : MonoBehaviour {
 			speed = 10f;
 		}
 			_rigidbody.velocity = new Vector3 (leftController.GetTouchPosition.x, 0, leftController.GetTouchPosition.y) * speed;
-		
+
 
 		// スティックの倒れた向きを向く
 		var v2 = leftController.GetTouchPosition.y;
@@ -53,15 +53,6 @@ public class PlayerMoveController : MonoBehaviour {
 		Vector3 direction = new Vector3(h2,0,v2);
 		transform.localRotation = Quaternion.LookRotation (direction);
 
-		// 斜めの長さ
-		//float y = leftController.GetTouchPosition.y;
-		//float x = leftController.GetTouchPosition.x;
-		//float syahen = Mathf.Sqrt (x * x + y * y);
-		//Debug.Log (syahen);
-		//if(continuousRightController)
-		//{
-		//	UpdateAim(rightController.GetTouchPosition);
-		//}
 	}
 
 	void UpdateAim(Vector2 value)

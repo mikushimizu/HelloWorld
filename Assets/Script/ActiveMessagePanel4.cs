@@ -1,12 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ActiveMessagePanel4 : MonoBehaviour {
 	//MessageUIに設定されているMessageスクリプトを設定
 	[SerializeField]
 	private MessageScript messageScript;
-
+	public GameObject time;
 
 	//表示させるメッセージ
 	private string message = "≪看守≫\n「お前、囚人だな？\nどうしてこんなところにいる。」\n"
@@ -22,9 +23,9 @@ public class ActiveMessagePanel4 : MonoBehaviour {
 		;
 
 	void OnCollisionEnter(Collision other){
-		if (other.gameObject.tag == "Player" ) {
+		if (other.gameObject.tag == "Player") {
 			messageScript.SetMessagePanel (message);
-
+			Destroy(time.gameObject);
 		}
 	}
 }

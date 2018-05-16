@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MessageScript : MonoBehaviour {
+	public int ED = 0;
 	public GameObject JoyStick;
 	//　メッセージUI
 	private Text messageText;
@@ -133,12 +135,22 @@ public class MessageScript : MonoBehaviour {
 	void SetMessage(string message) {
 		this.message = message;
 	}
+
 	//　他のスクリプトから新しいメッセージを設定
-	public void SetMessagePanel(string message) {
+	public void SetMessagePanel(string message ) {
 		SetMessage (message);
-		//JoyStick.SetActive (false);
 		transform.GetChild (0).gameObject.SetActive (true);
 		isEndMessage = false;
 	}
 
+}
+public class SampleSub {
+
+	public delegate void onComplete( string msg );
+
+	public void hoge ( onComplete callback ) {
+
+		// 処理が終わったら
+		callback("おわったよ");
+	}
 }
