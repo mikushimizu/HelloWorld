@@ -9,7 +9,7 @@ public class PlayerMoveController : MonoBehaviour {
 	public SimpleTouchController leftController;
 	public SimpleTouchController rightController;
 	public Transform headTrans;
-	public float speed = 5f;
+	public float speed;
 	public float speedContinuousLook = 100f;
 	public float speedProgressiveLook = 3000f;
 	public GameObject Message;
@@ -17,8 +17,11 @@ public class PlayerMoveController : MonoBehaviour {
 	private Rigidbody _rigidbody;
 	[SerializeField] bool continuousRightController = true;
 
+	Animator animator;
+
 	void Awake()
 	{
+		animator = this.gameObject.GetComponent <Animator> ();
 		_rigidbody = GetComponent<Rigidbody>();
 	}
 
@@ -38,12 +41,26 @@ public class PlayerMoveController : MonoBehaviour {
 		}
 			_rigidbody.velocity = new Vector3 (leftController.GetTouchPosition.x, 0, leftController.GetTouchPosition.y) * speed;
 
-
 		// スティックの倒れた向きを向く
-		var v2 = leftController.GetTouchPosition.y;
-		var h2 = leftController.GetTouchPosition.x;
+		float v2 = leftController.GetTouchPosition.y;
+		float h2 = leftController.GetTouchPosition.x;
+		Debug.Log (v2 + ", "+h2);
+		if (v2 == 0 && h2 == 0) {
+			speed = 0f;
+		} else {
+			speed = 10f;
+		}
+
 		Vector3 direction = new Vector3(h2,0,v2);
 		transform.localRotation = Quaternion.LookRotation (direction);
+
+		// WalkingFlag
+		if (speed == 0f) {
+			Debug.Log (speed);
+			animator.SetBool ("WalkingFlag", false);
+		}else{
+			animator.SetBool ("WalkingFlag", true);
+		}
 
 	}
 

@@ -78,6 +78,7 @@ public class MessageScript : MonoBehaviour {
 			elapsedTime += Time.deltaTime;
 
 			//　メッセージ表示中にマウスの左ボタンを押したら一括表示
+			//  OnTouchDown() --------------------------
 			if (Input.GetMouseButtonDown (0)) {
 				//　ここまでに表示しているテキストを代入
 				var allText = messageText.text;
@@ -112,6 +113,7 @@ public class MessageScript : MonoBehaviour {
 			}
 
 			//　マウスクリックされたら次の文字表示処理
+			//  OnTouchDown() --------------------------
 			if(Input.GetMouseButtonDown(0)) {
 				Debug.Log (messageText.text.Length);
 				messageText.text = "";
